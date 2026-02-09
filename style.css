@@ -1,0 +1,160 @@
+:root {
+    --bg-color: #232427;
+    --text-color: #f0f0f0;
+    --accent-color: #6d5dfc;
+    --shadow-light: #323232;
+    --shadow-dark: #18191b;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 30px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--shadow-dark),
+                 -2px -2px 4px var(--shadow-light);
+}
+
+.calculator {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px var(--shadow-dark),
+                -20px -20px 60px var(--shadow-light);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.display-container {
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: right;
+    box-shadow: inset 6px 6px 12px var(--shadow-dark),
+                inset -6px -6px 12px var(--shadow-light);
+    height: 100px; /* Fixed height to prevent resizing */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; /* Hide overflow */
+}
+
+.previous-operand {
+    color: #7a7a7a;
+    font-size: 1.5rem;
+    min-height: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+    transition: all 0.2s ease;
+    user-select: none;
+    /* Center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.operator {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.action {
+    color: #e63946; /* Red for Clear */
+    font-weight: 700;
+}
+
+.equals {
+    background-color: var(--accent-color);
+    color: #fff;
+    /* Different shadow for the colored button to make it pop */
+    box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+}
+
+.equals:hover {
+    background-color: #5b4cc4;
+}
+
+.equals:active {
+    background-color: var(--accent-color);
+    box-shadow: inset 4px 4px 8px #4a3eb0,
+                inset -4px -4px 8px #907fff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+    }
+    
+    .btn {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .current-operand {
+        font-size: 1.5rem;
+    }
+}
