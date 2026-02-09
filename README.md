@@ -15,5 +15,3 @@ It performs basic mathematical operations with a clean and responsive UI.
 - HTML5
 - CSS3
 - JavaScript
-
-## Project Structure
